@@ -1,1 +1,97 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Valentine 💘</title>
+
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(to right, #ff9a9e, #fad0c4);
+      font-family: "Comic Sans MS", cursive, sans-serif;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 3rem;
+      color: white;
+      text-shadow: 2px 2px 8px hotpink;
+    }
+
+    .buttons {
+      margin-top: 40px;
+    }
+
+    button {
+      padding: 15px 40px;
+      font-size: 1.5rem;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      margin: 20px;
+      transition: 0.2s;
+    }
+
+    #yes {
+      background: #ff3b7b;
+      color: white;
+      box-shadow: 0 0 15px pink;
+    }
+
+    #yes:hover {
+      transform: scale(1.1);
+    }
+
+    #no {
+      background: lightgray;
+      color: black;
+      position: absolute;
+    }
+
+    #message {
+      margin-top: 30px;
+      font-size: 2rem;
+      color: white;
+    }
+  </style>
+</head>
+
+<body>
+  <div>
+    <h1>Will you be my Valentine? 💖</h1>
+
+    <div class="buttons">
+      <button id="yes">Yes 😍</button>
+      <button id="no">No 🙄</button>
+    </div>
+
+    <div id="message"></div>
+  </div>
+
+  <script>
+    const noBtn = document.getElementById("no");
+    const yesBtn = document.getElementById("yes");
+    const message = document.getElementById("message");
+
+    // Move "No" button away when cursor comes near
+    noBtn.addEventListener("mouseover", () => {
+      const x = Math.floor(Math.random() * (window.innerWidth - 200));
+      const y = Math.floor(Math.random() * (window.innerHeight - 200));
+
+      noBtn.style.left = x + "px";
+      noBtn.style.top = y + "px";
+    });
+
+    // Yes button click event
+    yesBtn.addEventListener("click", () => {
+      message.innerHTML = "YAYYY!! 💘🥰 I knew you would say YES! 😭❤️";
+    });
+  </script>
+</body>
+</html>
